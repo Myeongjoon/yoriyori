@@ -1,3 +1,4 @@
+#이달의 요리 재료 기능
 def getMonthFoodMaterialList(request):
     from bs4 import BeautifulSoup
     import json
