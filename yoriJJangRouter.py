@@ -19,11 +19,14 @@ def getMonthFoodMaterialListCore(mon):
                     words.append(child.contents[0])
     return words
 #이달의 요리 재료 기능 - 구글 클라우드 용
-def getMonthFoodMaterialList(request):
+def yoriJJangRouter(request):
     request_json = request.get_json()
     mon = '01'
-    if request.args and 'mon' in request.args:
-        mon = request.args.get('mon')
+    if request.args and 'request' in request.args:
+        req = request.args.get('request')
+        slots = req.slots
+        targetMonth = slots.targetMonth
+        return targetMonth
     return getRandomIDataInArray(getMonthFoodMaterialListCore(mon),3)
 
 
@@ -31,3 +34,5 @@ def getMonthFoodMaterialList(request):
 if __name__ == "__main__":
     print(getRandomIDataInArray(getMonthFoodMaterialListCore("01"),3))
     print(getRandomIDataInArray(getMonthFoodMaterialListCore("02"),3))
+}
+}
