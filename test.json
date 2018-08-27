@@ -1,0 +1,47 @@
+{
+    "version": "0.1.0",
+    "session": {
+        "sessionId": "e540a3cb-1b21-4b7c-8caa-ea72fae67cd4",
+        "user": {
+            "userId": "qsPzOjutSWS-HX_HoeLg3w",
+            "accessToken": "ec72a2e2-ae65-4c9d-8304-585de981ec3b"
+        },
+        "new": true
+    },
+    "context": {
+        "System": {
+            "user": {
+                "userId": "qsPzOjutSWS-HX_HoeLg3w",
+                "accessToken": "ec72a2e2-ae65-4c9d-8304-585de981ec3b"
+            },
+            "device": {
+                "deviceId": "45252a77-4726-457c-b24d-8e4f61edf564",
+                "display": {
+                    "size": "l100",
+                    "orientation": "landscape",
+                    "dpi": 96,
+                    "contentLayer": {
+                        "width": 640,
+                        "height": 360
+                    }
+                }
+            }
+        }
+    },
+    "request": {
+        "type": "IntentRequest",
+        "intent": {
+            "name": "이달의식재료",
+            "slots": {
+                "function": {
+                    "name": "function",
+                    "value": "식재료"
+                },
+                "targetMonth": {
+                    "name": "targetMonth",
+                    "value": "01"
+                }
+            }
+        }
+    }
+}
