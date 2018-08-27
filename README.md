@@ -1,5 +1,7 @@
 # clova_yoriyori
 
-구글 클라우드에서 사용하는 코드
+test project for clova ai speaker application.
 
-getMonthFoodMaterialList.py : x월에 나오는 식재료가 뭐야?
+you can use this code using google cloud platform
+
+yoriJJangRouter.py : x월에 나오는 식재료가 뭐야?

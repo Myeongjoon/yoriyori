@@ -1,21 +1,21 @@
 {
     "version": "0.1.0",
     "session": {
-        "sessionId": "e540a3cb-1b21-4b7c-8caa-ea72fae67cd4",
+        "sessionId": "38e58181-e375-4e92-a16d-cc03c65ca3fe",
         "user": {
-            "userId": "qsPzOjutSWS-HX_HoeLg3w",
-            "accessToken": "ec72a2e2-ae65-4c9d-8304-585de981ec3b"
+            "userId": "BBUYVSG5SW6t_p0Yho3FNw",
+            "accessToken": "f0d2cbfb-e6e3-4401-a65c-cb6527128ecc"
         },
         "new": true
     },
     "context": {
         "System": {
             "user": {
-                "userId": "qsPzOjutSWS-HX_HoeLg3w",
-                "accessToken": "ec72a2e2-ae65-4c9d-8304-585de981ec3b"
+                "userId": "BBUYVSG5SW6t_p0Yho3FNw",
+                "accessToken": "f0d2cbfb-e6e3-4401-a65c-cb6527128ecc"
             },
             "device": {
-                "deviceId": "45252a77-4726-457c-b24d-8e4f61edf564",
+                "deviceId": "fc9c6e99-6ed4-4841-b18a-c219c10e2d73",
                 "display": {
                     "size": "l100",
                     "orientation": "landscape",
@@ -39,7 +39,7 @@
                 },
                 "targetMonth": {
                     "name": "targetMonth",
-                    "value": "01"
+                    "value": "이달의"
                 }
             }
         }
