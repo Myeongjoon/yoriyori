@@ -46,6 +46,8 @@ def yoriJJangCore(request):
         return HelloIntent()
     elif name == '이달의식재료' :
         return getMonthFoodMaterialMessage(intent)
+    else :
+        return HelloIntent()
 
 #구글 클라우드 라우터
 def yoriJJangRouter(request):
