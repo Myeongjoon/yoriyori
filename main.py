@@ -21,6 +21,8 @@ def getMonthFoodMaterialList(intent):
 
 #이달의 요리 재료 기능 - 코어
 def getMonthFoodMaterialListCore(mon):
+    return ['풋콩','대두']
+    '''
     web_url = "http://koreanfood.rda.go.kr/kfi/foodMonth/list?menuId=PS03599&mon="+mon
     with urllib.request.urlopen(web_url) as response:
         html = response.read()
@@ -33,6 +35,7 @@ def getMonthFoodMaterialListCore(mon):
                 for child in children:
                     words.append(child.contents[0])
     return words
+    '''
 
 #시작시 실행되는 인사말 인텐트:
 def HelloIntent():
