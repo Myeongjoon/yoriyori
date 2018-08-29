@@ -36,7 +36,7 @@ def getMonthFoodMaterialListCore(mon):
 
 #시작시 실행되는 인사말 인텐트:
 def HelloIntent():
-    return '안녕하세요. 요리요리 입니다.'
+    return '안녕하세요. 요리요리 입니다. 이달의 식재료 추천해줘 라고 말씀해주세요'
 #요리짱 코어
 def yoriJJangCore(request):
     req = request['request']
