@@ -34,11 +34,17 @@ def getMonthFoodMaterialListCore(mon):
                     words.append(child.contents[0])
     return words
 
+#시작시 실행되는 인사말 인텐트:
+def HelloIntent():
+    return '안녕하세요. 요리요리 입니다.'
 #요리짱 코어
 def yoriJJangCore(request):
     req = request['request']
     intent = req['intent']
-    if intent['name'] == '이달의식재료' :
+    name = intent['name']
+    if name == 'Clova.GuideIntent' :
+        return HelloIntent()
+    elif name == '이달의식재료' :
         return getMonthFoodMaterialMessage(intent)
 
 #구글 클라우드 라우터
