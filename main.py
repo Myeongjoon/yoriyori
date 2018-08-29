@@ -12,6 +12,9 @@ def HelloIntent():
 #요리짱 코어
 def yoriJJangCore(request):
     req = request['request']
+    type = req['type']
+    if type =='LaunchRequest' :
+        return HelloIntent()
     intent = req['intent']
     name = intent['name']
     if name == 'Clova.GuideIntent' :
