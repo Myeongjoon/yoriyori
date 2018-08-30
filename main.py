@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from getRandomIDataInArray import getRandomIDataInArray
-from getMonthFoodMaterialMessage import getMonthFoodMaterialMessage
+from MessageBiz import getMonthFoodMaterialMessage
+from MessageBiz import getExitExtensionIntent
 from datetime import datetime
 import flask
 import json
@@ -31,6 +32,8 @@ def yoriJJangCore(request):
         return HelloIntent()
     elif name == '이달의식재료' :
         return getMonthFoodMaterialMessage(intent)
+    elif name =='Clova.ExitExtensionIntent' :
+        return getExitExtensionIntent()
     else :
         return HelloIntent()
 

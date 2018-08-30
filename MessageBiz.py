@@ -5,6 +5,10 @@ import json
 import urllib.request
 import urllib.parse
 
+#종료 메시지
+def getExitExtensionIntent():
+    return "만나서 반가웠어요. 다음에도 요리요리를 불러주세요"
+
 #이달의 식재료 리스트 리턴
 def getMonthFoodMaterialMessage(intent):
     return getMonthFoodMaterialList(intent) + "입니다"
