@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from getRandomIDataInArray import getRandomIDataInArray
 from getMonthFoodMaterialMessage import getMonthFoodMaterialMessage
 from datetime import datetime
+import flask
 import json
 import urllib.request
 import urllib.parse

@@ -29,7 +29,7 @@
         }
     },
     "request": {
-        "type": "IntentRequest",
+        "type": "LaunchRequest",
         "intent": {
             "name": "이달의식재료",
             "slots": {
