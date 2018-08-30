@@ -14,8 +14,8 @@ def HelloIntent():
 #요리짱 응답 생성
 def CreateResponse(value):
     values = {"value" : value,"lang" : "ko","type" : "PlainText"}
-    outputSpeech = {"values" : values}
-    response = {"outputSpeech" : outputSpeech, "type": "SimpleSpeech","card": {},"directives": [],"shouldEndSession": False}
+    outputSpeech = {"values" : values,"type": "SimpleSpeech"}
+    response = {"outputSpeech" : outputSpeech, "card": {},"directives": [],"shouldEndSession": False}
     res = {"version": "0.1.0","response" : response}
     return json.dumps(res)
 
