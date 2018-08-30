@@ -21,6 +21,7 @@ def getMonthFoodMaterialList(intent):
 
 #이달의 요리 재료 기능 - 코어
 def getMonthFoodMaterialListCore(mon):
+    '''
     words = []
     words.append("풋콩")
     words.append("대두")
@@ -40,4 +41,4 @@ def getMonthFoodMaterialListCore(mon):
                 for child in children:
                     words.append(child.contents[0])
     return words
-    '''
+    
