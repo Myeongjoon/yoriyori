@@ -3,7 +3,6 @@ from getRandomIDataInArray import getRandomIDataInArray
 from MessageBiz import getMonthFoodMaterialMessage
 from MessageBiz import getExitExtensionIntent
 from datetime import datetime
-import flask
 import json
 import urllib.request
 import urllib.parse
@@ -16,7 +15,7 @@ def HelloIntent():
 def CreateResponse(value):
     values = {"value" : value,"lang" : "ko","type" : "PlainText"}
     outputSpeech = {"values" : values}
-    response = {"outputSpeech" : outputSpeech, "type": "SimpleSpeech","shouldEndSession": False}
+    response = {"outputSpeech" : outputSpeech, "type": "SimpleSpeech","card": {},"directives": [],"shouldEndSession": False}
     res = {"version": "0.1.0","response" : response}
     return json.dumps(res)
 
@@ -39,7 +38,9 @@ def yoriJJangCore(request):
 
 #구글 클라우드 라우터
 def yoriJJangRouter(request):
-    return CreateResponse(yoriJJangCore(request.get_json()))
+    ret = yoriJJangCore(request.get_json())
+    print(ret)
+    return CreateResponse(ret)
 '''
     {
     "version": "0.1.0",
