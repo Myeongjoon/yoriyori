@@ -10,6 +10,14 @@ import urllib.parse
 #시작시 실행되는 인사말 인텐트:
 def HelloIntent():
     return '안녕하세요. 요리요리 입니다. 이달의 식재료 추천해줘 라고 말씀해주세요'
+
+#요리짱 응답 생성
+def CreateResponse(value):
+    outputSpeech = {"values" : value,"lang" : "ko","type" : "PlainText"}
+    response = {"outputSpeech" : outputSpeech}
+    res = {"response" : response}
+    return json.dump(response)
+
 #요리짱 코어
 def yoriJJangCore(request):
     req = request['request']
@@ -27,4 +35,4 @@ def yoriJJangCore(request):
 
 #구글 클라우드 라우터
 def yoriJJangRouter(request):
-    return yoriJJangCore(request.get_json())
+    return CreateResponse(yoriJJangCore(request.get_json()))
