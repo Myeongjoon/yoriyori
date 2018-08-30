@@ -16,7 +16,7 @@ def CreateResponse(value):
     outputSpeech = {"values" : value,"lang" : "ko","type" : "PlainText"}
     response = {"outputSpeech" : outputSpeech}
     res = {"response" : response}
-    return json.dump(response)
+    return json.dumps(response)
 
 #요리짱 코어
 def yoriJJangCore(request):
