@@ -1,15 +1,13 @@
 from bs4 import BeautifulSoup
 from getRandomIDataInArray import getRandomIDataInArray
-from MessageBiz import getMonthFoodMaterialMessage
-from MessageBiz import getExitExtensionIntent
+
 from datetime import datetime
 import json
+import MessageBiz
 import urllib.request
 import urllib.parse
 
-#시작시 실행되는 인사말 인텐트:
-def HelloIntent():
-    return '안녕하세요. 요리요리 입니다. 이달의 식재료 추천해줘 라고 말씀해주세요'
+
 
 #요리짱 응답 생성
 def CreateResponse(value):
@@ -24,17 +22,17 @@ def yoriJJangCore(request):
     req = request['request']
     type = req['type']
     if type =='LaunchRequest' :
-        return HelloIntent()
+        return MessageBiz.HelloIntent()
     intent = req['intent']
     name = intent['name']
     if name == 'Clova.GuideIntent' :
-        return HelloIntent()
+        return MessageBiz.HelloIntent()
     elif name == '이달의식재료' :
-        return getMonthFoodMaterialMessage(intent)
+        return MessageBiz.getMonthFoodMaterialMessage(intent)
     elif name =='Clova.ExitExtensionIntent' :
-        return getExitExtensionIntent()
+        return MessageBiz.getExitExtensionIntent()
     else :
-        return HelloIntent()
+        return MessageBiz.HelloIntent()
 
 #구글 클라우드 라우터
 def yoriJJangRouter(request):
