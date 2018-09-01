@@ -1,6 +1,7 @@
 from getRandomIDataInArray import getRandomIDataInArray
-from getMonthFoodMaterialMessage import getMonthFoodMaterialListCore
+from MessageBiz import getMonthFoodMaterialListCore
 from main import yoriJJangCore
+from main import CreateResponse
 from pprint import pprint
 import json
 
@@ -12,3 +13,4 @@ if __name__ == "__main__":
     with open('test.json') as f:
         data = json.load(f)
     print(yoriJJangCore(data))
+    print(CreateResponse(yoriJJangCore(data)))
