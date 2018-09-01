@@ -4,4 +4,5 @@ test project for clova ai speaker application.
 
 you can use this code using google cloud platform
 
-yoriJJangRouter.py : x월에 나오는 식재료가 뭐야?
+main.py : 메인 실행 함수
+MessageBiz.py : 메시지 관련 함수
