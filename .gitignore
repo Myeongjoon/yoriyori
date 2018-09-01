@@ -127,3 +127,4 @@ pip-selfcheck.json
 
 #custom
 __pycache__/
+.idea/
