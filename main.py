@@ -56,10 +56,7 @@ def CreateResponse(request,value):
     req = request['request']
     intent = req['intent']
     slots = intent['slots']
-    mon = slots['targetMonth']['value']
-    if(len(mon)==1):
-        mon = "0"+ mon
-    sessionAttributes = {'mon' : mon}
+    sessionAttributes = {'intent' : '이달의식재료','targetMonth' : slots['targetMonth']['value']}
     res = {"version": "0.1.0","sessionAttributes": sessionAttributes,"response" : response}
     return json.dumps(res)
 
