@@ -4,6 +4,7 @@ from getRandomIDataInArray import getRandomIDataInArray
 from datetime import datetime
 import json
 import MessageBiz
+import RecipeBiz
 import urllib.request
 import urllib.parse
 
@@ -65,6 +66,8 @@ def yoriJJangCore(request):
     name = intent['name']
     if name == 'Clova.GuideIntent' :
         return MessageBiz.HelloIntent()
+    elif name == '이달의레시피' :
+        return RecipeBiz.getFoodRecipe(intent)
     elif name == '이달의식재료' :
         return MessageBiz.getMonthFoodMaterialMessage(intent)
     elif name == '이미지' :
