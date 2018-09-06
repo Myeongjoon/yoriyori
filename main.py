@@ -54,6 +54,7 @@ def CreateResponse(request,value):
     outputSpeech = {"values" : values,"type": "SimpleSpeech"}
     response = {"outputSpeech" : outputSpeech, "card": {},"directives": [],"shouldEndSession": False}
     req = request['request']
+    intent = req['intent']
     slots = intent['slots']
     mon = slots['targetMonth']['value']
     if(len(mon)==1):
