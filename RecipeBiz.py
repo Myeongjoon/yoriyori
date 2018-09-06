@@ -9,7 +9,7 @@ import urllib.parse
 def getFoodRecipe(intent):
     slots = intent['slots']
     mon = slots['targetMonth']['value']
-    mon = slots['material']['value']
+    material = slots['material']['value']
     if(len(mon)==1):
         mon = "0"+ mon
     return getFoodRecipeCore(getMonthFoodMaterialListCore(mon,material),3)

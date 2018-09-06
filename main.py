@@ -49,11 +49,17 @@ def returnImageView():
 
 
 #요리짱 응답 생성
-def CreateResponse(value):
+def CreateResponse(request,value):
     values = {"value" : value,"lang" : "ko","type" : "PlainText"}
     outputSpeech = {"values" : values,"type": "SimpleSpeech"}
     response = {"outputSpeech" : outputSpeech, "card": {},"directives": [],"shouldEndSession": False}
-    res = {"version": "0.1.0","response" : response}
+    req = request['request']
+    slots = intent['slots']
+    mon = slots['targetMonth']['value']
+    if(len(mon)==1):
+        mon = "0"+ mon
+    sessionAttributes = {'mon' : mon}
+    res = {"version": "0.1.0","sessionAttributes": sessionAttributes,"response" : response}
     return json.dumps(res)
 
 #요리짱 코어
@@ -81,7 +87,7 @@ def yoriJJangCore(request):
 def yoriJJangRouter(request):
     ret = yoriJJangCore(request.get_json())
     print(ret)
-    return CreateResponse(ret)
+    return CreateResponse(request.get_json(),ret)
 '''
     {
     "version": "0.1.0",
