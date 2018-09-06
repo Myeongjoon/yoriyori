@@ -83,8 +83,8 @@ def yoriJJangCore(request):
 
 #구글 클라우드 라우터
 def yoriJJangRouter(request):
-    ret = yoriJJangCore(request.get_json())
     print(request.get_json())
+    ret = yoriJJangCore(request.get_json())
     print(ret)
     res = CreateResponse(request.get_json(),ret)
     print(res)
