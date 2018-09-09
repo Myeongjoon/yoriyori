@@ -1,10 +1,6 @@
-from bs4 import BeautifulSoup
-from datetime import datetime
 import json
 import Biz.MessageBiz
 import Biz.RecipeBiz
-import urllib.request
-import urllib.parse
 
 #요리짱 응답 생성
 def CreateResponse(request,value):
@@ -26,19 +22,19 @@ def yoriJJangCore(request):
     req = request['request']
     type = req['type']
     if type =='LaunchRequest' :
-        return MessageBiz.HelloIntent()
+        return Biz.MessageBiz.HelloIntent()
     intent = req['intent']
     name = intent['name']
     if name == 'Clova.GuideIntent' :
-        return MessageBiz.HelloIntent()
+        return Biz.MessageBiz.HelloIntent()
     elif name == '이달의레시피' :
-        return RecipeBiz.getFoodRecipe(intent)
+        return Biz.RecipeBiz.getFoodRecipe(intent)
     elif name == '이달의식재료' :
-        return MessageBiz.getMonthFoodMaterialMessage(intent)
+        return Biz.MessageBiz.getMonthFoodMaterialMessage(intent)
     elif name =='Clova.ExitExtensionIntent' :
-        return MessageBiz.getExitExtensionIntent()
+        return Biz.MessageBiz.getExitExtensionIntent()
     else :
-        return MessageBiz.HelloIntent()
+        return Biz.MessageBiz.HelloIntent()
 
 #구글 클라우드 라우터
 def yoriJJangRouter(request):

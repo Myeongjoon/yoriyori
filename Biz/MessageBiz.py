@@ -25,7 +25,7 @@ def getMonthFoodMaterialList(intent):
         mon = str(datetime.today().month)
     if(len(mon)==1):
         mon = "0"+ mon
-    return ParameterUtil.getRandomIDataInArray(getMonthFoodMaterialListCore(mon),3)
+    return Util.ParameterUtil.getRandomIDataInArray(getMonthFoodMaterialListCore(mon),3)
 
 #이달의 요리 재료 기능 - 코어
 def getMonthFoodMaterialListCore(mon):

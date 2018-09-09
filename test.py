@@ -18,8 +18,8 @@ if __name__ == "__main__":
             {'value' : '콩'}}
         }
     print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getFoodRecipe(intent),3))
-    
-    with open('test.json') as f:
-        data = json.load(f)
-    print(yoriJJangCore(data))
-    print(CreateResponse(yoriJJangCore(data)))
+
+    #with open('test.json') as f:
+    #    data = json.load(f)
+    #print(yoriJJangCore(data))
+    #print(CreateResponse(yoriJJangCore(data)))
