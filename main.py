@@ -15,7 +15,7 @@ def CreateResponse(request,value):
     intent = req['intent']
     slots = intent['slots']
     if intent['name'] == '이달의식재료' :
-        sessionAttributes = {'intent' : '이달의식재료','targetMonth' : slots['targetMonth']['value']}
+        sessionAttributes = {'intent' : intent['name'],'targetMonth' : slots['targetMonth']['value']}
     else :
         sessionAttributes = {}
     res = {"version": "0.1.0","sessionAttributes": sessionAttributes,"response" : response}
