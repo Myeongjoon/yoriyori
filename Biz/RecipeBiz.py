@@ -1,5 +1,4 @@
-from bs4 import BeautifulSoup
-from getRandomIDataInArray import getRandomIDataInArray
+from bs4 import BeautifulSoup   
 from datetime import datetime
 import json
 import urllib.request

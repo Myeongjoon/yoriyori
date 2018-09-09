@@ -1,10 +1,8 @@
 from bs4 import BeautifulSoup
-from getRandomIDataInArray import getRandomIDataInArray
-
 from datetime import datetime
 import json
-import MessageBiz
-import RecipeBiz
+import Biz.MessageBiz
+import Biz.RecipeBiz
 import urllib.request
 import urllib.parse
 
@@ -98,26 +96,3 @@ def yoriJJangRouter(request):
     print(res)
     print('------- RESPONSE ---------')
     return res
-'''
-    {
-    "version": "0.1.0",
-    "sessionAttributes": {
-    "formerIntent": "Clova.GuideIntent",
-    "recommendation": 1,
-    "recipe": "NaN",
-    "step": 0
-    },
-    "response": {
-    "outputSpeech": {
-    "type": "SimpleSpeech",
-    "values": {
-    "type": "PlainText",
-    "lang": "ko",
-    "value": "안녕하세요. 모두의 요리사 요리왕입니다.\n\r만들고 싶은 음식을 말씀해 주세요.\n\r잘 모르시겠다면 요리왕이 남녀노소 즐길 수 있는 요리를 추천해 드릴께요."
-    }
-    },
-    "card": {},
-    "directives": [],
-    "shouldEndSession": false
-    }
-    }'''

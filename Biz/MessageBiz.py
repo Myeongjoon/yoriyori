@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
-from getRandomIDataInArray import getRandomIDataInArray
 from datetime import datetime
+import Util.ParameterUtil
 import json
 import urllib.request
 import urllib.parse
@@ -25,7 +25,7 @@ def getMonthFoodMaterialList(intent):
         mon = str(datetime.today().month)
     if(len(mon)==1):
         mon = "0"+ mon
-    return getRandomIDataInArray(getMonthFoodMaterialListCore(mon),3)
+    return ParameterUtil.getRandomIDataInArray(getMonthFoodMaterialListCore(mon),3)
 
 #이달의 요리 재료 기능 - 코어
 def getMonthFoodMaterialListCore(mon):
