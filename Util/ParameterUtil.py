@@ -1,5 +1,5 @@
 import random
-import datetime
+from datetime import datetime
 
 #리스트에 있는 랜덤 값 str으로
 def getRandomData(arr,num):

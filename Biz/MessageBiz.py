@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-from datetime import datetime
 import Util.ParameterUtil
 import json
 import urllib.request
