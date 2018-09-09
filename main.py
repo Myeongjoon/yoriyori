@@ -28,7 +28,7 @@ def yoriJJangCore(request):
     if name == 'Clova.GuideIntent' :
         return Biz.MessageBiz.HelloIntent()
     elif name == '이달의레시피' :
-        return Biz.RecipeBiz.getFoodRecipe(intent)
+        return Biz.MessageBiz.getFoodRecipe(intent)
     elif name == '이달의식재료' :
         return Biz.MessageBiz.getMonthFoodMaterialMessage(intent)
     elif name =='Clova.ExitExtensionIntent' :
