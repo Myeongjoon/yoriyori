@@ -16,7 +16,9 @@ def ConvertMonthParameter(mon):
     ret = ''
     if(mon == '이달의'):
         ret = str(datetime.today().month)
-    if(len(mon)==1):
-        ret = "0"+ mon
+    else:
+        ret = mon
+    if(len(ret)==1):
+        ret = "0" + ret
     print('converted mon : ' + ret)
     return ret
