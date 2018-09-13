@@ -4,9 +4,9 @@ import urllib.parse
 import Util.ParameterUtil
 
 #이달의 요리 재료 기능
-def getFoodRecipe(intent):
-    slots = intent['slots']
-    mon = slots['targetMonth']['value']
+def getFoodRecipe(request):
+    slots = request['request']['intent']['slots']
+    mon = request['session']['sessionAttributes']['targetMonth']
     material = slots['material']['value']
     mon = Util.ParameterUtil.ConvertMonthParameter(mon)
     return getFoodRecipeCore(mon,material)

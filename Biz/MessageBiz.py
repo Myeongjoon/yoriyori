@@ -15,9 +15,9 @@ def HelloIntent():
 
 #이달의 식재료 리스트 리턴
 def getMonthFoodMaterialMessage(intent):
-    return Biz.RecipeBiz.getMonthFoodMaterialList(intent) + "입니다"
+    return Biz.RecipeBiz.getMonthFoodMaterialList(intent) + "입니다. 이 중 하나를 선택하시면 요리법을 알려드릴게요."
 
 
 #이달의 식재료 리스트 리턴
-def getFoodRecipe(intent):
-    return Biz.RecipeBiz.getFoodRecipe(intent) + "입니다"
+def getFoodRecipe(request):
+    return Biz.RecipeBiz.getFoodRecipe(request) + "입니다"
