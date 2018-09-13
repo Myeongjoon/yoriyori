@@ -9,7 +9,7 @@ def getFoodRecipe(request):
     mon = request['session']['sessionAttributes']['targetMonth']
     material = slots['material']['value']
     mon = Util.ParameterUtil.ConvertMonthParameter(mon)
-    return getFoodRecipeCore(mon,material)
+    return Util.ParameterUtil.getRandomData(getFoodRecipeCore(mon,material),3)
 
 
 #이달의 요리 재료 기능 - 코어
@@ -25,7 +25,9 @@ def getFoodRecipeCore(mon,material):
                 words = []
                 for child in children:
                     words.append(child.contents[0])
-    return [ word for word in words if material in word]
+    res = [word for word in words if material in word]
+    print(res)
+    return res
 
 
 # 이달의 식재료 리스트 리턴
