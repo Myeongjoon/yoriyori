@@ -9,8 +9,17 @@ import json
 
 #이달의 요리 재료 기능 - 테스트
 if __name__ == "__main__":
+    print(' --- unit test --- ')
     print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getMonthFoodMaterialListCore("01"),3))
-    print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getMonthFoodMaterialListCore("02"),3))
+    print(' --- unit test --- ')
+    slots = {'slots':
+         {'targetMonth':
+              {'value': '이달의'},
+          'material':
+              {'value': '무화과'}}
+     }
+    print(Biz.MessageBiz.getMonthFoodMaterialMessage(slots))
+    print(' --- unit test --- ')
     request = \
         {'request' :
             {'intent' :
@@ -27,9 +36,7 @@ if __name__ == "__main__":
               }
           }
         }
-    print(Biz.RecipeBiz.getFoodRecipe(request))
 
-    #with open('test.json') as f:
-    #    data = json.load(f)
-    #print(yoriJJangCore(data))
-    #print(CreateResponse(yoriJJangCore(data)))
+    print(' --- unit test --- ')
+    print(Biz.MessageBiz.getFoodRecipe(request))
+    print(' --- unit test --- ')

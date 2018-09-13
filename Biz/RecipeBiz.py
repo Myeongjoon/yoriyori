@@ -10,7 +10,7 @@ def getFoodRecipe(request):
     material = slots['material']['value']
     mon = Util.ParameterUtil.ConvertMonthParameter(mon)
     print('getFoodRecipe :  mon : ' + mon + ' material : ' + material);
-    return Util.ParameterUtil.getRandomData(getFoodRecipeCore(mon,material),3)
+    return Util.ParameterUtil.getRandomData(getFoodRecipeCore(mon,material),1)
 
 
 #이달의 요리 재료 기능 - 코어
@@ -37,7 +37,7 @@ def getMonthFoodMaterialList(intent):
     slots = intent['slots']
     mon = slots['targetMonth']['value']
     mon = Util.ParameterUtil.ConvertMonthParameter(mon)
-    return Util.ParameterUtil.getRandomData(getMonthFoodMaterialListCore(mon), 3)
+    return Util.ParameterUtil.getRandomData(getMonthFoodMaterialListCore(mon), 5)
 
 
 # 이달의 요리 재료 기능 - 코어
