@@ -39,6 +39,7 @@ def getMonthFoodMaterialList(intent):
 # 이달의 요리 재료 기능 - 코어
 def getMonthFoodMaterialListCore(mon):
     web_url = "http://koreanfood.rda.go.kr/kfi/foodMonth/list?menuId=PS03599&mon=" + mon
+    print(web_url)
     with urllib.request.urlopen(web_url) as response:
         html = response.read()
         soup = BeautifulSoup(html, 'html.parser')
@@ -49,5 +50,6 @@ def getMonthFoodMaterialListCore(mon):
                 words = []
                 for child in children:
                     words.append(child.contents[0])
+    print(words)
     return words
 
