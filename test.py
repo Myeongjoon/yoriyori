@@ -11,13 +11,23 @@ import json
 if __name__ == "__main__":
     print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getMonthFoodMaterialListCore("01"),3))
     print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getMonthFoodMaterialListCore("02"),3))
-    intent = {'slots' : 
-        {'targetMonth' : 
-            {'value' : '8'},
-        'material' : 
-            {'value' : '콩'}}
+    request = \
+        {'request' :
+            {'intent' :
+                {'slots' :
+                    {'targetMonth' :
+                        {'value' : '이달의'},
+                    'material' :
+                        {'value' : '소고기'}}
+                }
+            },
+          'session' : {
+              'sessionAttributes' : {
+                  'targetMonth' : '이달의'
+              }
+          }
         }
-    print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getFoodRecipe(intent),3))
+    print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getFoodRecipe(request),3))
 
     #with open('test.json') as f:
     #    data = json.load(f)

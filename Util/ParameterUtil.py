@@ -12,7 +12,7 @@ def getRandomData(arr,num):
 
 #정수형 month -> string 컨버터
 def ConvertMonthParameter(mon):
-    print('mon : ' + mon)
+    print('mon : ' + str(mon))
     ret = ''
     if(mon == '이달의'):
         ret = str(datetime.today().month)

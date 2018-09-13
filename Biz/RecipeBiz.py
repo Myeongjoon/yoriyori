@@ -9,6 +9,7 @@ def getFoodRecipe(request):
     mon = request['session']['sessionAttributes']['targetMonth']
     material = slots['material']['value']
     mon = Util.ParameterUtil.ConvertMonthParameter(mon)
+    print('getFoodRecipe :  mon : ' + mon + ' material : ' + material);
     return Util.ParameterUtil.getRandomData(getFoodRecipeCore(mon,material),3)
 
 
