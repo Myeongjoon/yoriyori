@@ -18,7 +18,7 @@ if __name__ == "__main__":
                     {'targetMonth' :
                         {'value' : '이달의'},
                     'material' :
-                        {'value' : '소고기'}}
+                        {'value' : '무화과'}}
                 }
             },
           'session' : {
@@ -27,7 +27,7 @@ if __name__ == "__main__":
               }
           }
         }
-    print(Util.ParameterUtil.getRandomData(Biz.RecipeBiz.getFoodRecipe(request),3))
+    print(Biz.RecipeBiz.getFoodRecipe(request))
 
     #with open('test.json') as f:
     #    data = json.load(f)

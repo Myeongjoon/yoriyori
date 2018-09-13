@@ -26,6 +26,7 @@ def getFoodRecipeCore(mon,material):
                 words = []
                 for child in children:
                     words.append(child.contents[0])
+        print('words : ' + str(words))
     res = [word for word in words if material in word]
     print(res)
     return res

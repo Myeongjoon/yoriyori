@@ -20,4 +20,4 @@ def getMonthFoodMaterialMessage(intent):
 
 #이달의 식재료 리스트 리턴
 def getFoodRecipe(request):
-    return Biz.RecipeBiz.getFoodRecipe(request) + "입니다"
+    return Biz.RecipeBiz.getFoodRecipe(request) + "를 추천 드립니다"
