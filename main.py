@@ -31,6 +31,8 @@ def yoriJJangCore(request):
         return Biz.MessageBiz.getFoodRecipe(request)
     elif name == '이달의식재료' :
         return Biz.MessageBiz.getMonthFoodMaterialMessage(intent)
+    elif name == '다른요리알려줘' :
+        return Biz.MessageBiz.getMonthFoodMaterialMessage(intent)
     elif name =='Clova.ExitExtensionIntent' :
         return Biz.MessageBiz.getExitExtensionIntent()
     else :
