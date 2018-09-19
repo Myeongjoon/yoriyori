@@ -16,7 +16,7 @@ def HelloIntent():
 #이달의 식재료 리스트 리턴
 def getMonthFoodMaterialMessage(intent):
     Material = Biz.RecipeBiz.getMonthFoodMaterialList(intent);
-    targetMonth = intent['slots']['targetMonth']
+    targetMonth = intent['slots']['targetMonth']['value']
     mon = Util.ParameterUtil.ConvertMonthToStr(targetMonth)
     ranPrefix = ['신선한','짱맛난','맛깔난']
     return mon + ' 제철 식재료는 ' + Material + "에요. 이 중 원하시는 식재료를 골라주세요. "+Util.ParameterUtil.getRandomData(ranPrefix,1)+" 재료를 추천해 드릴게요."
