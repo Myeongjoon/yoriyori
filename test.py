@@ -7,6 +7,11 @@ import Biz.MessageBiz
 import Biz.RecipeBiz
 import json
 
+print(Util.ParameterUtil.getRandomData(['1','2','3','4'],3))
+print(Util.ParameterUtil.getRandomData(['1','2','3','4'],3))
+print(Util.ParameterUtil.getRandomData(['1','2','3','4'],3))
+print(Util.ParameterUtil.getRandomData(['1','2','3','4'],3))
+print(Util.ParameterUtil.getRandomData(['1','2','3','4'],3))
 #이달의 요리 재료 기능 - 테스트
 if __name__ == "__main__":
     print(' --- unit test --- ')

@@ -5,7 +5,7 @@ from datetime import datetime
 def getRandomData(arr,num):
     res = ""
     for i in range(num,0,-1):
-        idx = random.randrange(0,i)
+        idx = random.randrange(0,len(arr))
         res = res + arr.pop(idx) + " "
     return res
 
