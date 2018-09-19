@@ -11,7 +11,11 @@ def CreateResponse(request,value):
     intent = req['intent']
     slots = intent['slots']
     if intent['name'] == '이달의식재료' :
-        sessionAttributes = {'intent' : intent['name'],'targetMonth' : slots['targetMonth']['value']}
+        sessionAttributes = {'targetMonth' : slots['targetMonth']['value']}
+    elif intent['name']  == '이달의레시피' :
+        tempSessionAttributes = request['session']['sessionAttributes']
+        tempSessionAttributes['material'] = slots['material']['value']
+        sessionAttributes = request['session']['sessionAttributes']
     else :
         sessionAttributes = request['session']['sessionAttributes']
     res = {"version": "0.1.0","sessionAttributes": sessionAttributes,"response" : response}
@@ -30,9 +34,9 @@ def yoriJJangCore(request):
     elif name == '이달의레시피' :
         return Biz.MessageBiz.getFoodRecipe(request)
     elif name == '이달의식재료' :
-        return Biz.MessageBiz.getMonthFoodMaterialMessage(intent)
+        return Biz.MessageBiz.getMonthFoodMaterialMessage(request)
     elif name == '다른요리알려줘' :
-        return Biz.MessageBiz.getMonthFoodMaterialMessage(intent)
+        return Biz.MessageBiz.getMonthFoodMaterialMessage(request)
     elif name =='Clova.ExitExtensionIntent' :
         return Biz.MessageBiz.getExitExtensionIntent()
     else :
