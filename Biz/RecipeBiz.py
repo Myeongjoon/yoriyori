@@ -4,10 +4,7 @@ import urllib.parse
 import Util.ParameterUtil
 
 #이달의 요리 재료 기능
-def getFoodRecipe(request):
-    slots = request['request']['intent']['slots']
-    mon = request['session']['sessionAttributes']['targetMonth']
-    material = slots['material']['value']
+def getFoodRecipe(mon,material):
     mon = Util.ParameterUtil.ConvertMonthParameter(mon)
     print('getFoodRecipe :  mon : ' + mon + ' material : ' + material);
     return Util.ParameterUtil.getRandomData(getFoodRecipeCore(mon,material),1)

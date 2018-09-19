@@ -44,5 +44,5 @@ def getFoodRecipe(request):
         Material = request['session']['sessionAttributes']['material']
     targetMonth = request['session']['sessionAttributes']['targetMonth']
     mon = Util.ParameterUtil.ConvertMonthToStr(targetMonth)
-    recipe = Biz.RecipeBiz.getFoodRecipe(request)
+    recipe = Biz.RecipeBiz.getFoodRecipe(targetMonth,Material)
     return mon+'에 먹는 '+Material+' 요리! '+recipe+'는 어떠세요? 다른 '+Material+' 요리를 알고 싶으시다면 다른요리알려줘 라고 말씀해주세요. 필요 없으시면 필요없어라고 말씀해주세요.'
