@@ -7,11 +7,11 @@ import Biz.RecipeBiz
 
 #종료 메시지
 def getExitExtensionIntent():
-    return "만나서 반가웠어요. 다음에도 요리요리를 불러주세요"
+    return "제철 메뉴가 고민일땐 이달의 식재료를 불러주세요. 오늘도 맛깔진 하루 보내시길 바래요!"
 
 #시작시 실행되는 인사말 인텐트:
 def HelloIntent():
-    return '안녕하세요. 요리요리 입니다. 이달의 식재료 추천해줘 라고 말씀해주세요'
+    return '안녕하세요. 이달의 식재료를 알려드려요. 사용자님께 계절/상황에 맞는 음식을 추천해드려요.'
 
 #이달의 식재료 리스트 리턴
 def getMonthFoodMaterialMessage(intent):
@@ -29,4 +29,4 @@ def getFoodRecipe(request):
     material = slots['material']['value']
     mon = Util.ParameterUtil.ConvertMonthToStr(mon)
     recipe = Biz.RecipeBiz.getFoodRecipe(request)
-    return mon+'에 먹는 '+material+' 요리! '+recipe+'는 어떠세요? '+recipe+' 레시피를 원하시면 레시피 보내줘 라고 말씀해주세요. 필요 없으시면 필요없어라고 말씀해주세요.'
+    return mon+'에 먹는 '+material+' 요리! '+recipe+'는 어떠세요? 다른 '+material+' 요리를 알고 싶으시다면 다른요리알려줘 라고 말씀해주세요. 필요 없으시면 필요없어라고 말씀해주세요.'
