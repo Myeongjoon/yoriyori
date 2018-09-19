@@ -18,6 +18,7 @@ def CreateResponse(request,value):
         sessionAttributes = request['session']['sessionAttributes']
     else :
         sessionAttributes = request['session']['sessionAttributes']
+    sessionAttributes['intent'] = intent['name']
     res = {"version": "0.1.0","sessionAttributes": sessionAttributes,"response" : response}
     return json.dumps(res)
 
