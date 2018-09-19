@@ -34,8 +34,15 @@ def getMonthFoodMaterialMessage(request):
 #이달의 식재료 리스트 리턴
 def getFoodRecipe(request):
     slots = request['request']['intent']['slots']
-    mon = request['session']['sessionAttributes']['targetMonth']
-    material = slots['material']['value']
-    mon = Util.ParameterUtil.ConvertMonthToStr(mon)
+    req = request['request']
+    intent = req['intent']
+    name = intent['name']
+    Material=''
+    if name=='이달의레시피':
+        Material = slots['material']['value']
+    elif name=='다른요리알려줘':
+        Material = request['session']['sessionAttributes']['material']
+    targetMonth = request['session']['sessionAttributes']['targetMonth']
+    mon = Util.ParameterUtil.ConvertMonthToStr(targetMonth)
     recipe = Biz.RecipeBiz.getFoodRecipe(request)
-    return mon+'에 먹는 '+material+' 요리! '+recipe+'는 어떠세요? 다른 '+material+' 요리를 알고 싶으시다면 다른요리알려줘 라고 말씀해주세요. 필요 없으시면 필요없어라고 말씀해주세요.'
+    return mon+'에 먹는 '+Material+' 요리! '+recipe+'는 어떠세요? 다른 '+Material+' 요리를 알고 싶으시다면 다른요리알려줘 라고 말씀해주세요. 필요 없으시면 필요없어라고 말씀해주세요.'
