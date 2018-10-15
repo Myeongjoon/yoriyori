@@ -1,8 +1,5 @@
 # clova_yoriyori
 
-test project for clova ai speaker application.
+클로바 확장 서비스 이달의 식재료.
 
-you can use this code using google cloud platform
-
-main.py : 메인 실행 함수
-MessageBiz.py : 메시지 관련 함수
+코어 코드 입니다.
