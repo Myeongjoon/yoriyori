@@ -39,7 +39,7 @@ def getFoodRecipe(request):
     name = intent['name']
     Material=''
     if name=='이달의레시피':
-        Material = slots['material']['value']
+        Material = slots['targetMaterial']['value']
     elif name=='다른요리알려줘':
         Material = request['session']['sessionAttributes']['material']
     targetMonth = request['session']['sessionAttributes']['targetMonth']
