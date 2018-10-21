@@ -11,7 +11,7 @@ def getExitExtensionIntent():
 
 #시작시 실행되는 인사말 인텐트:
 def HelloIntent():
-    return '안녕하세요. 이달의 식재료를 알려드려요. 사용자님께 계절/상황에 맞는 음식을 추천해드려요.'
+    return '안녕하세요. 이달의 식재료를 알려드려요. 저는 계절에 맞는 제철재료와 요리를 추천해드려요. 알고 싶은 월의 이름을 말해주세요. 예를들어 10월의 식재료를 알고 싶다면 10월! 이라고 말씀해주세요'
 
 #이달의 식재료 리스트 리턴
 def getMonthFoodMaterialMessage(request):
