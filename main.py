@@ -1,6 +1,5 @@
 import json
-import Biz.MessageBiz
-import Biz.RecipeBiz
+from Biz import MessageBiz
 
 #요리짱 응답 생성
 def CreateResponse(request,value):
@@ -27,21 +26,21 @@ def yoriJJangCore(request):
     req = request['request']
     type = req['type']
     if type =='LaunchRequest' :
-        return Biz.MessageBiz.HelloIntent()
+        return MessageBiz.HelloIntent()
     intent = req['intent']
     name = intent['name']
     if name == 'Clova.GuideIntent' :
-        return Biz.MessageBiz.HelloIntent()
+        return MessageBiz.HelloIntent()
     elif name == '이달의레시피' :
-        return Biz.MessageBiz.getFoodRecipe(request)
+        return MessageBiz.getFoodRecipe(request)
     elif name == '이달의식재료' :
-        return Biz.MessageBiz.getMonthFoodMaterialMessage(request)
+        return MessageBiz.getMonthFoodMaterialMessage(request)
     elif name == '다른요리알려줘' :
-        return Biz.MessageBiz.getFoodRecipe(request)
+        return MessageBiz.getFoodRecipe(request)
     elif name =='Clova.ExitExtensionIntent' :
-        return Biz.MessageBiz.getExitExtensionIntent()
+        return MessageBiz.getExitExtensionIntent()
     else :
-        return Biz.MessageBiz.HelloIntent()
+        return MessageBiz.HelloIntent()
 
 #구글 클라우드 라우터
 def yoriJJangRouter(request):

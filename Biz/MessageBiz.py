@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
-import Util.ParameterUtil
+from Util import ParameterUtil
 import json
 import urllib.request
 import urllib.parse
-import Biz.RecipeBiz
+from Biz import RecipeBiz
 
 #종료 메시지
 def getExitExtensionIntent():
@@ -22,13 +22,13 @@ def getMonthFoodMaterialMessage(request):
     Material=''
     if name=='이달의식재료':
         targetMonth = intent['slots']['targetMonth']['value']
-        Material = Biz.RecipeBiz.getMonthFoodMaterialList(intent);
+        Material = RecipeBiz.getMonthFoodMaterialList(intent);
     elif name=='다른요리알려줘':
         targetMonth = request['session']['sessionAttributes']['targetMonth']
         Material = request['session']['sessionAttributes']['material']
-    mon = Util.ParameterUtil.ConvertMonthToStr(targetMonth)
+    mon = ParameterUtil.ConvertMonthToStr(targetMonth)
     ranPrefix = ['신선한','짱맛난','맛깔난']
-    return mon + ' 제철 식재료는 ' + Material + "에요. 이 중 원하시는 식재료를 골라주세요. "+Util.ParameterUtil.getRandomData(ranPrefix,1)+" 재료를 추천해 드릴게요."
+    return mon + ' 제철 식재료는 ' + Material + "에요. 이 중 원하시는 식재료를 골라주세요. "+ParameterUtil.getRandomDataFromSql(ranPrefix,1,2)+" 재료를 추천해 드릴게요."
 
 
 #이달의 식재료 리스트 리턴
@@ -43,6 +43,6 @@ def getFoodRecipe(request):
     elif name=='다른요리알려줘':
         Material = request['session']['sessionAttributes']['material']
     targetMonth = request['session']['sessionAttributes']['targetMonth']
-    mon = Util.ParameterUtil.ConvertMonthToStr(targetMonth)
-    recipe = Biz.RecipeBiz.getFoodRecipe(targetMonth,Material)
+    mon = ParameterUtil.ConvertMonthToStr(targetMonth)
+    recipe = RecipeBiz.getFoodRecipe(targetMonth,Material)
     return mon+'에 먹는 '+Material+' 요리! '+recipe+'는 어떠세요? 다른 '+Material+' 요리를 알고 싶으시다면 다른요리알려줘 라고 말씀해주세요. 필요 없으시면 필요없어라고 말씀해주세요.'

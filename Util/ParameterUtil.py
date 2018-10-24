@@ -1,6 +1,12 @@
 import random
 from datetime import datetime
-
+#리스트에 있는 랜덤 값 str으로
+def getRandomDataFromSql(arr,num,loc):
+    res = ""
+    for i in range(num,0,-1):
+        idx = random.randrange(0,len(arr))
+        res = res + arr.pop(idx)[loc] + " "
+    return res
 #리스트에 있는 랜덤 값 str으로
 def getRandomData(arr,num):
     res = ""
